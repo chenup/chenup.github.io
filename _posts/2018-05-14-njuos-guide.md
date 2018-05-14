@@ -4,7 +4,7 @@ title:      github协同开发指导
 subtitle:   如何加入 NJU-OS 项目的开发
 date:       2018-05-14
 author:     LQ
-header-img: img/post/20180514/git-os-guide/gog.pg.jpg
+header-img: img/post/20180514/git-os-guide/gog-pg.jpg
 catalog: true
 tags:
     - 协同开发
