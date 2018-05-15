@@ -7,14 +7,16 @@ author:     LQ
 header-img: img/post/20180514/git-os-guide/gog-pg.jpg
 catalog: true
 tags:
+    - git
     - 协同开发
     - github
+    - NJU-OS
 ---
 # 前言
 ---
 >很多项目开发都会采用 `git` 这一优秀的分布式版本管理工具进行项目版本管理，使用 `github` 开源平台作为代码仓库托管平台。由于 git 的使用非常灵活，在实践当中衍生了很多种不同的工作流程，不同的项目、不同的团队会有不同的协作方式。
 
->本文针对 [NJU-OS](https://github.com/NJU-OS) 项目提出一种 `git工作流`，便于开发者加入到该项目的开发当中。
+>本文针对 [NJU-OS](https://github.com/NJU-OS) 项目提出一种 **git工作流**，便于开发者加入到该项目的开发当中。
 
 # 必要知识
 ---
@@ -125,10 +127,25 @@ tags:
 
 # 工作流（Workflow）
 ---
-下面以 NJU-OS 里面的 u-boot-nju 为例，一步步操作上面所说的工作流程：
+下面以 NJU-OS 项目里面的 u-boot-nju 为例，一步步操作上面所说的工作流程：
 
 **Step 1： 找到源仓库**
-[NJU-OS](https://github.com/NJU-OS/) 项目的管理员已经建立了一个源仓库 [NJU-OS/u-boot-nju](https://github.com/NJU-OS/u-boot-nju) ，并且已经初始化了两个永久性分支 `master` 和 `develop` ，如图：
+
+[NJU-OS](https://github.com/NJU-OS/) 项目的管理员已经建立了一个源仓库 [NJU-OS/u-boot-nju](https://github.com/NJU-OS/u-boot-nju) ，并且也已经初始化了两个永久性分支 `master` 和 `develop` ，如图：
+
+![origin repo](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180514/git-os-guide/gog-or.png)
+
+**Step 2： 开发者fork源仓库**
+
+找到源仓库以后，每个开发者就可以复制一份源仓库到自己的github账号中，然后作为自己开发所用的仓库。假设我是项目中的开发者，我就到 [NJU-OS/u-boot-nju](https://github.com/NJU-OS/u-boot-nju) 主页上去 `fork`:
+
+![fork u-boot-nju](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180514/git-os-guide/gog-fu.png)
+
+`fork`完以后，我就可以在我自己的仓库列表中看到一个和源仓库一模一样的仓库：
+
+![my u-boot-nju](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180514/git-os-guide/gog-mu.png)
+
+**Step 3: 开发者把自己的仓库clone到本地**
 
 # 参考资料
 ---
