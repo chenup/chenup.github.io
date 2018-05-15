@@ -107,6 +107,17 @@ tags:
 ```
 
 **step 3**：在功能性分支上进行开发工作，多次 `commit` ，并且测试成功
+```
+# 省略了对分支中文件的更改操作
+>>> ...
+
+# 提交更改
+>>> git add .
+>>> git commit -m "finish debug feature"
+
+# 省略了测试操作
+>>> ...
+```
 
 **step 4**：把做好的功能合并到 `develop` 中
 ```
@@ -145,7 +156,7 @@ tags:
 
 ![my u-boot-nju](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180514/git-os-guide/gog-mu.png)
 
-#### Step 3: 开发者把自己的仓库clone到本地
+#### Step 3： 开发者把自己的仓库clone到本地
 
 我的操作环境是 ubuntu 16.04，当然 windows 和 mac 也可以。在 `clone` 之前需要在本机上配置 `git` ，请自行百度。
 
@@ -156,11 +167,95 @@ tags:
 ```
 # 把远程仓库复制到本地
 >>> git clone https://github.com/xxx/u-boot-nju.git
+
+# 进入到本地仓库所在的目录中
+>>> cd u-boot-nju/
 ```
 
 ![git clone](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180514/git-os-guide/gog-gc.png)
 
+查看当前所在的分支，当前所在分支的前面用 `*` 标记
 
+```
+# 列出本地已经存在的分支，并且在当前分支的前面用"*"标记
+>>> git branch
+```
+
+![git clone](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180514/git-os-guide/gog-gb.png)
+
+#### Step 4： 构建功能分支进行开发
+
+进入仓库后，按照前面所说的构建功能性分支的步骤，构建功能分支进行开发、合并，假设我现在要开发一个 `debug` 功能：
+
+```
+# 切换到 develop 分支
+>>> git checkout develop
+
+# 分出一个功能性分支，并切换到它
+>>> git checkout -b feature-debug
+
+# 查看当前分支
+>>> git branch
+```
+
+![git checkout feature-debug](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180514/git-os-guide/gog-gcfd.png)
+
+```
+# 打开了调试功能
+>>> vim include/common.h
+
+# 提交更改
+>>> git add .
+>>> git commit -m "finish debug feature"
+```
+
+![git commit debug](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180514/git-os-guide/gog-gcd.png)
+
+```
+# 回到 develop 分支
+>>> git checkout develop
+
+# 把已经完成并确认正确的功能合并到 develop 中
+>>> git merge --no-ff feature-debug
+
+# 删除功能性分支
+>>> git branch -d feature-debug
+
+# 把 develop 分支提交到自己的远程仓库中
+>>> git push origin develop
+```
+
+![git push develop](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180514/git-os-guide/gog-gpd.png)
+
+在此过程之后，访问自己github的 u-boot-nju 主页的 `develop` 分支，你将看到修改的结果。
+
+#### Step 5： 向管理员提交pull request
+
+假设我已经完成了 `debug` 功能（当然，你还可能对自己的 `develop` 进行了多次合并，完成了多个功能），经过测试确认没有问题后，就可以请求管理员把自己仓库的 `develop` 分支合并到源仓库的 `develop` 分支中，这就是 `pull request` 。
+
+点击 `Compare & pull request` 按钮：
+
+![pull request](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180514/git-os-guide/gog-pr.png)
+
+点击 `Create pull request` 按钮，开发者就可以静静地等待管理员对你的提交的评审了：
+
+![open pull request](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180514/git-os-guide/gog-opr.png)
+
+完成 `pull request` 的提交，到这里为止，开发者一个阶段的工作就结束了，恭喜：
+
+![open pull request](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180514/git-os-guide/gog-opr.png)
+
+#### Step 6： 管理员测试、合并
+
+接下来就是管理员的操作了，管理员登陆github，处理开发者对源仓库发起的pull request。
+
+以上，就是一个git & github协同工作流的基本步骤。
+
+# 总结
+---
+送上一幅神图供大家参悟：
+
+![git model](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180514/git-os-guide/gog-gm.png)
 
 # 参考资料
 ---
