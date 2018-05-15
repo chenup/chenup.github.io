@@ -125,6 +125,10 @@ tags:
 
 # 工作流（Workflow）
 ---
+下面以 NJU-OS 里面的 u-boot-nju 为例，一步步操作上面所说的工作流程：
+
+**Step 1： 找到源仓库**
+[NJU-OS](https://github.com/NJU-OS/) 项目的管理员已经建立了一个源仓库 [NJU-OS/u-boot-nju](https://github.com/NJU-OS/u-boot-nju) ，并且已经初始化了两个永久性分支 `master` 和 `develop` ，如图：
 
 # 参考资料
 ---
