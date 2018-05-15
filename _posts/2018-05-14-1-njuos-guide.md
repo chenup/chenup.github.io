@@ -141,11 +141,26 @@ tags:
 
 ![fork u-boot-nju](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180514/git-os-guide/gog-fu.png)
 
-`fork`完以后，我就可以在我自己的仓库列表中看到一个和源仓库一模一样的仓库：
+`fork`完以后，我就可以在我自己的仓库列表中看到一个和源仓库一模一样的仓库了：
 
 ![my u-boot-nju](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180514/git-os-guide/gog-mu.png)
 
 **Step 3: 开发者把自己的仓库clone到本地**
+
+我的操作环境是 ubuntu 16.04，当然 windows 和 mac 也可以。在 `clone` 之前需要在本机上配置 `git` ，请自行百度。
+
+首先从开发者自己的仓库获取地址，如 `https://github.com/xxx/u-boot-nju.git`：
+
+![clone u-boot-nju address](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180514/git-os-guide/gog-cua.png)
+
+```
+# 把远程仓库复制到本地
+>>> git clone https://github.com/xxx/u-boot-nju.git
+```
+
+![git clone](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180514/git-os-guide/gog-gc.png)
+
+
 
 # 参考资料
 ---
