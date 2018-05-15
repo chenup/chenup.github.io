@@ -129,13 +129,13 @@ tags:
 ---
 下面以 NJU-OS 项目里面的 u-boot-nju 为例，一步步操作上面所说的工作流程：
 
-**Step 1： 找到源仓库**
+#### Step 1： 找到源仓库
 
 [NJU-OS](https://github.com/NJU-OS/) 项目的管理员已经建立了一个源仓库 [NJU-OS/u-boot-nju](https://github.com/NJU-OS/u-boot-nju) ，并且也已经初始化了两个永久性分支 `master` 和 `develop` ，如图：
 
 ![origin repo](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180514/git-os-guide/gog-or.png)
 
-**Step 2： 开发者fork源仓库**
+#### Step 2： 开发者fork源仓库
 
 找到源仓库以后，每个开发者就可以复制一份源仓库到自己的github账号中，然后作为自己开发所用的仓库。假设我是项目中的开发者，我就到 [NJU-OS/u-boot-nju](https://github.com/NJU-OS/u-boot-nju) 主页上去 `fork`:
 
@@ -145,7 +145,7 @@ tags:
 
 ![my u-boot-nju](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180514/git-os-guide/gog-mu.png)
 
-**Step 3: 开发者把自己的仓库clone到本地**
+#### Step 3: 开发者把自己的仓库clone到本地
 
 我的操作环境是 ubuntu 16.04，当然 windows 和 mac 也可以。在 `clone` 之前需要在本机上配置 `git` ，请自行百度。
 
