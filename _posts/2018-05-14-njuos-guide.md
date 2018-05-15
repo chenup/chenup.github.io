@@ -12,12 +12,13 @@ tags:
 ---
 # 前言
 ---
->很多项目开发都会采用 git 这一优秀的分布式版本管理工具进行项目版本管理，使用 `github` 开源平台作为代码仓库托管平台。由于 git 的使用非常灵活，在实践当中衍生了很多种不同的工作流程，不同的项目、不同的团队会有不同的协作方式。
+>很多项目开发都会采用 `git` 这一优秀的分布式版本管理工具进行项目版本管理，使用 `github` 开源平台作为代码仓库托管平台。由于 git 的使用非常灵活，在实践当中衍生了很多种不同的工作流程，不同的项目、不同的团队会有不同的协作方式。
 
 >本文针对 [NJU-OS](https://github.com/NJU-OS) 项目提出一种 git 工作流，便于开发者加入到该项目的开发当中。
 
 # 必要知识
 ---
+
 #### 仓库（Repository）
 
 在项目的开始到结束，我们会有两种仓库。一种是源仓库（origin），一种是开发者仓库。
@@ -60,11 +61,11 @@ tags:
 
 永久性分支是寿命无限的分支，存在于整个项目的开始、开发、迭代、终止过程中。永久性分支只有两个: `master` 和 `develop` 。
 
-**master**
+###### master
 
 主分支从项目一开始便存在，它用于存放经过测试，已经完全稳定代码；在项目开发以后的任何时刻当中，`master`存放的代码应该是可作为产品供用户使用的代码。所以，应该随时保持 `master`仓库代码的清洁和稳定，确保入库之前是通过完全测试和代码 `review` 的。`master` 分支是所有分支中最不活跃的，大概每个月或每两个月更新一次，每一次 `master` 更新的时候都应该用 git 打上 `tag` ，说明你的产品有新版本发布了。
 
-**develop**
+###### develop
 
 开发分支，一开始从 `master`分支中分离出来，用于开发者存放基本稳定代码。每个开发者的仓库相当于源仓库的一个镜像，每个开发者自己的仓库上也有 `master` 和 `develop` 。开发者把功能做好以后，是存放到自己的 `develop` 中，当测试完以后，可以向管理者发起一个 `pull request` ，请求把自己仓库的 `develop` 分支合并到源仓库的 `develop` 中。
 
@@ -72,9 +73,31 @@ tags:
 
 一个产品不断完善和发布的过程如下图所示：
 
-![master and develop](https://github.com/chenup/chenup.github.io/blob/master/img/post/20180514/git-os-guide/gog-mad.png)
+![master and develop](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180514/git-os-guide/gog-mad.png)
+
+**Note**: 任何人都不应该向 `master` 直接进行无意义的合并、提交操作。正常情况下，`master` 只应该接受 `develop` 的合并，也就是说，`master` 所有代码更新应该源于合并 `develop` 的代码。
 
 ##### 临时性分支
+
+临时性分支和永久性分支不同，临时性分支在开发过程中是一定会被删除的。所有临时性分支一般源于 `develop` ，最终也会合并到 `develop` 中。
+
+###### feature
+
+功能性分支，是用于开发项目的功能的分支，是开发者主要的战斗阵地。开发者在本地仓库从develop分支分出功能分支，在该分支上进行功能的开发，开发完成以后再合并到develop分支上，这时候功能性分支已经完成任务，可以删除。功能性分支的命名一般为`feature-*` ，`*` 为需要开发的功能的名称。
+
+![develop and feature](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180514/git-os-guide/gog-daf.png)
+
+**example**: 假设我是一名 NJU-OS 的开发者，已经把源仓库 `fork` 了，并且 `clone` 到了本地。现在要开发出 NJU-OS 的 `debug` 功能，我在本地仓库中可以这样做：
+
+**step 1**: 切换到 `develop` 分支
+```
+>>> git checkout develop
+```
+
+**step 2**: 分出一个功能性分支
+```
+>>> git checkout -b feature-debug
+```
 
 # 工作流（Workflow）
 ---
