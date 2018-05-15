@@ -14,7 +14,7 @@ tags:
 ---
 >很多项目开发都会采用 `git` 这一优秀的分布式版本管理工具进行项目版本管理，使用 `github` 开源平台作为代码仓库托管平台。由于 git 的使用非常灵活，在实践当中衍生了很多种不同的工作流程，不同的项目、不同的团队会有不同的协作方式。
 
->本文针对 [NJU-OS](https://github.com/NJU-OS) 项目提出一种 git 工作流，便于开发者加入到该项目的开发当中。
+>本文针对 [NJU-OS](https://github.com/NJU-OS) 项目提出一种 `git工作流`，便于开发者加入到该项目的开发当中。
 
 # 必要知识
 ---
@@ -48,14 +48,14 @@ tags:
 
 - **永久性分支**
 
-    `master branch`: 主分支
+    `master branch`：主分支
 
-    `develop branch`: 开发分支
+    `develop branch`：开发分支
 
 
 - **临时性分支**
 
-    `feature branch`: 功能分支
+    `feature branch`：功能分支
 
 ##### 永久性分支
 
@@ -75,7 +75,7 @@ tags:
 
 ![master and develop](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180514/git-os-guide/gog-mad.png)
 
-**Note**: 任何人都不应该向 `master` 直接进行无意义的合并、提交操作。正常情况下，`master` 只应该接受 `develop` 的合并，也就是说，`master` 所有代码更新应该源于合并 `develop` 的代码。
+**Note**：任何人都不应该向 `master` 直接进行无意义的合并、提交操作。正常情况下，`master` 只应该接受 `develop` 的合并，也就是说，`master` 所有代码更新应该源于合并 `develop` 的代码。
 
 ##### 临时性分支
 
@@ -83,20 +83,37 @@ tags:
 
 ###### feature
 
-功能性分支，是用于开发项目的功能的分支，是开发者主要的战斗阵地。开发者在本地仓库从develop分支分出功能分支，在该分支上进行功能的开发，开发完成以后再合并到develop分支上，这时候功能性分支已经完成任务，可以删除。功能性分支的命名一般为`feature-*` ，`*` 为需要开发的功能的名称。
+功能性分支，是用于开发项目的功能的分支，是开发者主要的战斗阵地。开发者在本地仓库从 `develop` 分支分出功能分支，在该分支上进行功能的开发，开发完成以后再合并到 `develop` 分支上，这时候功能性分支已经完成任务，可以删除。功能性分支的命名一般为`feature-*` ，`*` 为需要开发的功能的名称。
 
 ![develop and feature](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180514/git-os-guide/gog-daf.png)
 
-**example**: 假设我是一名 NJU-OS 的开发者，已经把源仓库 `fork` 了，并且 `clone` 到了本地。现在要开发出 NJU-OS 的 `debug` 功能，我在本地仓库中可以这样做：
+**example**：假设我是一名 NJU-OS 的开发者，已经把源仓库 `fork` 了，并且 `clone` 到了本地。现在要开发出 NJU-OS 的 `debug` 功能，我在本地仓库中可以这样做：
 
-**step 1**: 切换到 `develop` 分支
+**step 1**：切换到 `develop` 分支
 ```
 >>> git checkout develop
 ```
 
-**step 2**: 分出一个功能性分支
+**step 2**：分出一个功能性分支
 ```
 >>> git checkout -b feature-debug
+```
+
+**step 3**：在功能性分支上进行开发工作，多次 `commit` ，并且测试成功
+
+**step 4**：
+```
+# 回到develop分支
+>>> git checkout develop
+
+# 把做好的功能合并到develop中
+>>> git merge --no-ff feature-debug
+
+# 删除功能性分支
+>>> git branch -d feature-debug
+
+# 把develop提交到自己的远程仓库中
+>>> git push origin develop
 ```
 
 # 工作流（Workflow）
@@ -104,5 +121,5 @@ tags:
 
 # 参考资料
 ---
-[使用git和github进行协同开发流程](https://segmentfault.com/a/1190000002413519)
+- [使用git和github进行协同开发流程](https://segmentfault.com/a/1190000002413519)
 
