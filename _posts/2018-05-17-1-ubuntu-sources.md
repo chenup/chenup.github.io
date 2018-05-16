@@ -20,7 +20,6 @@ tags:
 ```
 
 网易源：
-
 ```
 deb http://mirrors.163.com/ubuntu/ trusty main restricted universe multiverse
 deb http://mirrors.163.com/ubuntu/ trusty-security main restricted universe multiverse
