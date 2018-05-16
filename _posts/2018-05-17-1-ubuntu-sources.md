@@ -35,7 +35,7 @@ deb-src http://mirrors.163.com/ubuntu/ trusty-backports main restricted universe
 
 效果如下：
 
-！[replace sources](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180517/ubuntu-sources/us-rs.png)
+![replace sources](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180517/ubuntu-sources/us-rs.png)
 
 #### Step 2： 更新源
 
@@ -45,10 +45,10 @@ deb-src http://mirrors.163.com/ubuntu/ trusty-backports main restricted universe
 
 - 更新成功
 
-！[update success](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180517/ubuntu-sources/us-us.png)
+![update success](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180517/ubuntu-sources/us-us.png)
 
 - 更新失败（换新的源重试）
 
-！[update fail](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180517/ubuntu-sources/us-uf.png)
+![update fail](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180517/ubuntu-sources/us-uf.png)
 
 
