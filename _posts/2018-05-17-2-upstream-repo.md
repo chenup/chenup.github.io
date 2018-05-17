@@ -49,7 +49,7 @@ tags:
 
 #### Step 4
 ```
-# 在本地仓库更新并合并自己远程仓库的代码
+# 在本地仓库更新并且合并自己远程仓库的代码
 >>> git pull origin develop
 ```
 
@@ -73,10 +73,10 @@ tags:
 
 #### Step 2
 ```
-# 切换 develop 分支
+# 切换到 develop 分支
 >>> git checkout develop
 
-# 把上游仓库新的更新取回到本地，但是不合并
+# 把上游仓库的更新取回到本地，但是不合并
 >>> git fetch upstream
 
 # 把上游仓库的 develop 分支合并到本地的 develop 分支
@@ -87,6 +87,17 @@ tags:
 
 #### Step 3
 ```
+# 删除上游仓库
+>>> git remote remove upstream
+
+# 查看远程仓库信息
+>>> git remote -v
+```
+
+![remove upstream](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180517/upstream-repo/ur-rmu.png)
+
+#### Step 4
+```
 # 向自己的远程仓库推送同步源仓库的代码
 >>> git push origin develop
 ```
@@ -94,8 +105,9 @@ tags:
 ![push orign](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180517/upstream-repo/ur-po.png)
 
 # 注意
-1. 上游仓库和远程仓库一般不同，上游仓库一般是源仓库。
-2. 虽然本文是以 develop 分支为例，但是一般和源仓库同步的分支都是 `master` 分支，`master` 分支是最稳定的分支。
+- 上游仓库和自己的远程仓库不同，上游仓库一般是源仓库。
+
+- 虽然本文是以 develop 分支为例，但是一般和源仓库同步的都是 `master` 分支，`master` 分支是最稳定的分支。
 
 # 参考资料
 ---
