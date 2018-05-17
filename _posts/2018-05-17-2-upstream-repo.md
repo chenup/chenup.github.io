@@ -25,56 +25,77 @@ tags:
 
 #### Step 1
 
-进入自己的 doc-nju 仓库，选择 `develop` 分支，点击 `new pull request`
+进入自己的 doc-nju 仓库，选择 `develop` 分支，点击 `New pull request`
 ![new pull request](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180517/upstream-repo/ur-npr.png)
 
 #### Step 2
 
 选择仓库和分支
 
-- `base fork` -> 选择自己的仓库（chenup/doc-nju）
-- `base` -> 选择自己仓库的分支（develop）
-- `head fork` -> 选择源仓库（NJU-OS/doc-nju）
-- `compare` -> 选择源仓库的分支（develop）
+- `base fork`：选择自己的仓库（chenup/doc-nju）
+- `base`：选择自己仓库的分支（develop）
+- `head fork`：选择源仓库（NJU-OS/doc-nju）
+- `compare`：选择源仓库的分支（develop）
 
 点击 `Create pull request`
 ![create pull request](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180517/upstream-repo/ur-cpr.png)
 
 #### Step 3
-点击 `Merge pull request` ，开始同步源仓库的 `develop` 分支
+点击 `Merge pull request` ，开始同步源仓库（NJU-OS/doc-nju）的 `develop` 分支
 ![merge pull request](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180517/upstream-repo/ur-mpr.png)
 
 同步成功
 ![merge success](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180517/upstream-repo/ur-ms.png)
 
+#### Step 4
+```
+# 在本地仓库更新并合并自己远程仓库的代码
+>>> git pull origin develop
+```
+
+![pull origin](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180517/upstream-repo/ur-puo.png)
+
 # 第二种： git 命令操作
 ---
+#### Step 1
+```
+# 查看远程仓库信息
+>>> git remote -v
 
-#### 仓库（Repository）
+# 添加上游仓库 NJU-OS/doc-nju
+>>> git remote add upstream https://github.com/NJU-OS/doc-nju.git
 
-在项目的开始到结束，我们会有两种仓库。一种是源仓库（origin），一种是开发者仓库。
+# 查看远程仓库信息
+>>> git remote -v
+```
 
-- **源仓库**
+![add upstream](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180517/upstream-repo/ur-au.png)
 
-    在项目的开始，项目的发起者构建起一个项目的最原始的仓库，我们把它称为 `origin`，例如 [u-boot-nju](https://github.com/NJU-OS/u-boot-nju) 。
-    
-    源仓库有两个作用：
+#### Step 2
+```
+# 切换 develop 分支
+>>> git checkout develop
 
-    **1、汇总参与该项目的各个开发者的代码**
+# 把上游仓库新的更新取回到本地，但是不合并
+>>> git fetch upstream
 
-    **2、存放趋于稳定和可发布的代码**
+# 把上游仓库的 develop 分支合并到本地的 develop 分支
+>>> git merge upstream/develop
+```
 
-    源仓库应该是**受保护**的，开发者不应该直接对其进行开发工作。只有项目管理者能对其进行较高权限的操作。
-    &nbsp;
+![merge upstream](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180517/upstream-repo/ur-mu.png)
 
-- **开发者仓库** 
+#### Step 3
+```
+# 向自己的远程仓库推送同步源仓库的代码
+>>> git push origin develop
+```
 
-    任何开发者都不会对源仓库进行直接的操作，源仓库建立以后，每个开发者需要做的事情就是把源仓库“复制”一份，作为自己日常开发的仓库。这个复制，也就是github上面的 `fork` 操作。
+![push orign](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180517/upstream-repo/ur-po.png)
 
-    每个开发者所 `fork` 的仓库是完全独立的，互不干扰的，甚至与源仓库都无关。每个开发者仓库相当于一个源仓库实体的影像，开发者在这个影像中进行编码，提交到自己的仓库中，这样就可以轻易地实现团队成员之间的并行开发工作。而开发工作完成以后，开发者可以向源仓库发送 `pull request`，请求管理员把自己的代码合并到源仓库中，这样就实现了**分布式开发**和**集中式管理**。
-
-#### 分支（Branch）
-
+# 注意
+1. 上游仓库和远程仓库一般不同，上游仓库一般是源仓库。
+2. 虽然本文是以 develop 分支为例，但是一般和源仓库同步的分支都是 `master` 分支，`master` 分支是最稳定的分支。
 
 # 参考资料
 ---
