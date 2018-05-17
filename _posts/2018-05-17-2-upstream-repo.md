@@ -1,16 +1,18 @@
 ---
 layout:     post
-title:      参与 NJU-OS 项目的开发（一）
-subtitle:   协同开发采用的一种git工作流
-date:       2018-05-14
+title:      参与 NJU-OS 项目的开发（二）
+subtitle:   fork源仓库后，同步源仓库的更新
+date:       2018-05-17
 author:     LQ
-header-img: img/post/20180514/git-os-guide/gog-pg.jpg
+header-img: img/post/20180517/upstream-repo/ur-pg.jpg
 catalog: true
 tags:
     - git
-    - 协同开发
+    - upstream
+    - 同步更新
     - github
-    - NJU-OS
+    - fork
+    - 源仓库
 ---
 # 前言
 ---
