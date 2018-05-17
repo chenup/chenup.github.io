@@ -16,38 +16,38 @@ tags:
 ---
 # 前言
 ---
->在 `github` 上 `fork` 源仓库之后，如果源仓库分支出现了新的改动，那么开发者该如何将自己仓库的分支同步到该分支，有两种方法可供使用。
+>在 `github` 上 `fork` 源仓库之后，如果**源仓库**的某个分支出现了新的改动，那么开发者该如何将**自己仓库**的分支同步到**源仓库**的分支，有两种方法可供使用。
 
->以 doc-nju 为例，将 chenup/nju 的 `develop` 同步到 NJU-OS/nju 的 `develop` 分支。
+>以 doc-nju 为例，实现将 [chenup/doc-nju](https://github.com/chenup/doc-nju) 的 `develop` 分支**同步**到 [NJU-OS/doc-nju](https://github.com/NJU-OS/doc-nju) 的 `develop` 分支。
 
-# 在 github 主页上进行操作
+# 第一种： 在 github 主页上进行操作
 ---
 
 #### Step 1
 
-进入自己的仓库，选择分支，点击 `new pull request`
+进入自己的 doc-nju 仓库，选择 `develop` 分支，点击 `new pull request`
 ![new pull request](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180517/upstream-repo/ur-npr.png)
 
 #### Step 2
 
 选择仓库和分支
 
-- `base fork` 选择自己的仓库（`chenup/doc-nju`）
-- `base` 选择自己仓库的分支（`develop`）
-- `head fork` 选择源仓库（`NJU-OS/doc-nju`）
-- `compare` 选择源仓库的分支（`develop`）
+- `base fork` -> 选择自己的仓库（chenup/doc-nju）
+- `base` -> 选择自己仓库的分支（develop）
+- `head fork` -> 选择源仓库（NJU-OS/doc-nju）
+- `compare` -> 选择源仓库的分支（develop）
 
 点击 `Create pull request`
 ![create pull request](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180517/upstream-repo/ur-cpr.png)
 
 #### Step 3
-点击 `Merge pull request` ，同步源仓库的分支
+点击 `Merge pull request` ，开始同步源仓库的 `develop` 分支
 ![merge pull request](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180517/upstream-repo/ur-mpr.png)
 
-成功同步
+同步成功
 ![merge success](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180517/upstream-repo/ur-ms.png)
 
-# git 命令操作
+# 第二种： git 命令操作
 ---
 
 #### 仓库（Repository）
