@@ -26,7 +26,7 @@ tags:
 #### Step 1
 
 进入自己的仓库，选择分支，点击 `new pull request`
-![new pull request](https://github.com/NJU-OS/u-boot-nju)
+![new pull request](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180517/upstream-repo/ur-npr.png)
 
 #### Step 2
 
@@ -38,14 +38,14 @@ tags:
 - `compare` 选择源仓库的分支（`develop`）
 
 点击 `Create pull request`
-![create pull request](https://github.com/NJU-OS/u-boot-nju)
+![create pull request](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180517/upstream-repo/ur-cpr.png)
 
 #### Step 3
 点击 `Merge pull request` ，同步源仓库的分支
-![merge pull request](https://github.com/NJU-OS/u-boot-nju)
+![merge pull request](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180517/upstream-repo/ur-mpr.png)
 
 成功同步
-![merge success](https://github.com/NJU-OS/u-boot-nju)
+![merge success](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180517/upstream-repo/ur-ms.png)
 
 # git 命令操作
 ---
