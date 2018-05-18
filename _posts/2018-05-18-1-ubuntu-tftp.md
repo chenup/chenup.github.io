@@ -1,10 +1,10 @@
 ---
 layout:     post
 title:      NJU-OS 之u-boot阶段（一）
-subtitle:   ubuntu安装tftp服务器
+subtitle:   在ubuntu上安装tftp服务器
 date:       2018-05-18
 author:     LQ
-header-img: img/post/20180517/ubuntu-sources/ut-pg.jpg
+header-img: img/post/20180518/ubuntu-tftp/ut-pg.jpg
 catalog: true
 tags:
     - u-boot
@@ -50,7 +50,7 @@ tags:
 >>> tftp dgram udp wait nobody /usr/sbin/tcpd /usr/sbin/in.tftpd /tftpboot
 ```
 
-![vim conf]()
+![vim conf](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180518/ubuntu-tftp/ut-vc.png)
 
 #### Step 4
 
@@ -70,7 +70,7 @@ tags:
 >>> touch testfile
 ```
 
-![touch testfile]()
+![touch testfile](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180518/ubuntu-tftp/ut-tt.png)
 
 在其它目录下下载 `testfile`，比如 `~/Downloads`
 ```
@@ -79,4 +79,4 @@ tags:
 >>> tftp> get testfile
 ```
 
-![download testfile]()
+![download testfile](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180518/ubuntu-tftp/ut-dt.png)
