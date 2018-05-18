@@ -105,6 +105,7 @@ tags:
 ![push orign](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180517/upstream-repo/ur-po.png)
 
 # 注意
+---
 - 上游仓库和自己的远程仓库不同，上游仓库一般是源仓库。
 
 - 虽然本文是以 develop 分支为例，但是一般和源仓库同步的都是 `master` 分支，`master` 分支是最稳定的分支。
