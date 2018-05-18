@@ -77,7 +77,7 @@ tags:
 
 ![touch testfile](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180518/ubuntu-tftp/ut-tt.png)
 
-在某一目录下面下载 `testfile`，比如 `~/Downloads` 目录
+在某一目录下通过 `tftp` 下载 `testfile`，比如 `~/Downloads` 目录
 ```
 >>> cd ~/Downloads
 
