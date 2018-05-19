@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      host和guest实现互ping
+title:      host与guest实现互ping
 subtitle:   针对虚拟机VirtualBox
 date:       2018-05-19
 author:     LQ
@@ -15,18 +15,16 @@ tags:
 ---
 # 前言
 ---
->本文的目的是实现 `host` 和运行在虚拟机（`VirtualBox`）上的`guest` 可以互相ping通。
+>本文的目标是实现 `host`系统 和运行在虚拟机（`VirtualBox`）上的 `guest`系统 可以互相 `ping` 通。`host` 是 **windows 10**，而 `guest` 是 **ubuntu 16.04**。
 
->`host` 是 `windows 10`，`guest` 是 `ubuntu 16.04`。
-
->`host` 的 `ip` 要和 `guest` 的 `ip` 处于同一个子网下。作为一个例子，我们将 `host` 的 `ip` 设置为 `192.168.1.118`， 而 `guest` 的 `ip` 设置为 `192.168.1.116`（这两个 `ip` 可以根据自己的需求而改变）。 
+>`host` 要和 `guest` 处于**同一个子网**下。举例来说，我们将 `host` 的 **ip** 设置为 `192.168.1.118`， 而 `guest` 的 **ip** 设置为 `192.168.1.116`（这两个 **ip** 可以根据自己的需求改变）。 
 
 # 步骤
 ---
 
 #### Step 1： host（windows 10）设置
 
-设置 `ip`
+配置 `IPv4` 属性
 
 - `ip`：**192.168.1.118**
 - `netmask`：**255.255.255.0**
@@ -44,7 +42,7 @@ tags:
 
 #### Step 2： 虚拟机（VirtualBox）设置
 
-网卡1设置成桥接
+网卡1设置成**桥接**
 
 ![net bridge](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180519/host-guest-ping/hgp-nb.png)
 
@@ -88,7 +86,7 @@ tags:
 
 重启（可选）
 
-显示 `ip` 配置信息
+显示网络配置信息
 
 ```
 >>> ifconfig -a
@@ -98,7 +96,7 @@ tags:
 
 #### Step 4： 验证
 
-`host` ping guest
+`host ping guest`
 
 ```
 >>> ping 192.168.1.116
@@ -106,7 +104,7 @@ tags:
 
 ![ping guest](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180519/host-guest-ping/hgp-pig.png)
 
-`guest` ping host
+`guest ping host`
 
 ```
 >>> ping 192.168.1.118
