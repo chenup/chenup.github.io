@@ -4,7 +4,7 @@ title:      SSH登录远程服务器
 subtitle:   上传和下载文件
 date:       2018-05-20
 author:     LQ
-header-img: img/post/20180519/host-guest-ping/so-pg.jpg
+header-img: img/post/20180520/ssh-operation/so-pg.jpg
 catalog: true
 tags:
     - ssh
