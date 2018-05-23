@@ -14,9 +14,9 @@ tags:
 ---
 >在 `Unity` 当中，脚本（`scripts`）按照一定的生命周期执行。
 
-# 内容
+# 生命周期
 ---
-![script life](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180523/unity-script-life/usl-sl.jpg)
+![script life](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180523/unity-script-life/usl-sl.svg)
 
 # 参考
 - [Execution Order of Event Functions](https://docs.unity3d.com/Manual/ExecutionOrder.html)
