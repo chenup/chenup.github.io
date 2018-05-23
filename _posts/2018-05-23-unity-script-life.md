@@ -16,7 +16,7 @@ tags:
 
 # 生命周期
 ---
-![script life](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180523/unity-script-life/usl-sl.svg)
+![script life](https://raw.githubusercontent.com/chenup/chenup.github.io/master/img/post/20180523/unity-script-life/usl-sl.jpg)
 
 # 参考
 - [Execution Order of Event Functions](https://docs.unity3d.com/Manual/ExecutionOrder.html)
